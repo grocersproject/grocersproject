@@ -11,34 +11,30 @@
     <div class="global-container">
         <div class="card login-form">
         <div class="card-body">
-            <h3 class="card-title text-center">Welcome Admin</h3>
-            <input type="button" class="btn btn-primary btn-block" name="logout" value="Logout"/>
+            <div style="display: inline-block;">
+                <h3 class="card-title text-center" style="position: absolute;">Welcome Admin</h3>
+                <input type="button" class="btn btn-primary btn-block" style="margin-left: 225px; margin-top: 5px;" name="logout" value="Logout" (click)="homePage()" />
+            </div>
+            
             <div>
-                <h4 class="card-title">Add Product</h4>
-                <input type="button" class="btn btn-primary btn-block" name="add_product" value="Add Product"/>
+                <input type="button" class="btn btn-primary btn-block" name="add_product" value="Add Product" (click)="addProduct()"/>
             </div> 
             <div>
-                <h4 class="card-title">Delete Product</h4>
-                <input type="button" class="btn btn-primary btn-block" name="delete_product" value="delete Product"/>
+                <input type="button" class="btn btn-primary btn-block" name="delete_product" value="Delete Product" (click)="deleteProduct()"/>
             </div> 
             <div>
-                <h4 class="card-title">Update Product</h4>
-                <input type="button" class="btn btn-primary btn-block" name="update_product" value="Update Product"/>
+                <input type="button" class="btn btn-primary btn-block" name="update_product" value="Update Product" (click)="updateProduct()"/>
             </div> 
             <div>
-                <h4 class="card-title">View Requests</h4>
-                <input type="button" class="btn btn-primary btn-block" name="view_requests" value="View Requests"/>
+                <input type="button" class="btn btn-primary btn-block" name="view_requests" value="View Requests" (click)="viewRequest()"/>
             </div>   
             <div>
-                <h4 class="card-title">Add Employee</h4>
-                <input type="button" class="btn btn-primary btn-block" name="add_employee" value="add_employee"/>
+                <input type="button" class="btn btn-primary btn-block" name="add_employee" value="Add Employee"/>
             </div>
             <div>
-                <h4 class="card-title">Delete Employee</h4>
-                <input type="button" class="btn btn-primary btn-block" name="delete_requests" value="Delete Requests"/>
+                <input type="button" class="btn btn-primary btn-block" name="delete_requests" value="Delete Employee"/>
             </div>
             <div>
-                <h4 class="card-title">Generate Reports</h4>
                 <input type="button" class="btn btn-primary btn-block" name="generate_reports" value="Generate Reports"/>
             </div>
 
