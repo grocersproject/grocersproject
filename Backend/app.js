@@ -32,7 +32,15 @@ var User = require("./routers/user.router.js");
 
 var EmployeeRouter = require("./routers/employee.router");
 
-app.use("/admin", AdminRouter);
+
+
+// http://localhost:9090/admin_dashboard/storeProductDetails/         {"pname":"laptop","price":1500,"pquantity":50}
+// http://localhost:9090/admin_dashboard/deleteProductByName/pname   
+// http://localhost:9090/admin_dashboard/updateProductDetails         {"pname":"tv","price":567,"pquantity":89}   
+// http://localhost:9090/employee/storeRequest/                       {"request":"Please change the car price"}  sarafudeen API
+// http://localhost:9090/employee/viewRequest/
+
+app.use("/admin_dashboard", AdminRouter);
 // middleware
 app.use("/user", User);
 
