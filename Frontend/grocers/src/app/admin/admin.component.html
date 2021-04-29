@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+      </head>
+      <body>
+          <div >
+        <button style="margin-left: 30%;" class="btn btn-dark" type="submit" (click)="Emp_visible()">Employee Tab</button>
+        <button style="margin-left: 20%;"class="btn btn-dark" type="submit" (click)="Prd_visible()">Product Tab</button>
+         </div>
+        
+        <div *ngIf="Employee">
+            <div class="row" style="margin-left: 15%;margin-top: 5%;">
+                <div class="col-sm-6">
+                  <div class="card bg-light mb-3">
+                    <div class="card-body">
+                      <h2 class="card-title">Add Employee</h2>
+                      <form #employeeRef = "ngForm"  (ngSubmit) = "addEmployee(employeeRef.value)">
+                        <input type = "text" class="form-control" name = "Employee_Fname" placeholder = "Employee First Name" ngModel>
+                        <br/>
+                      
+                        <input type = "text" class="form-control" name = "Employee_Lname" placeholder = "Employee Last Name" ngModel>
+                        <br/>
+                      
+                        <input type = "email" class="form-control" name = "Email"  placeholder = "Employee Email" ngModel>
+                        <br/>
+                        <input type = "text" class="form-control" name = "Address"  placeholder = "Employee Address" ngModel>
+                        <br/>
+                        <p></p>
+                        <input type="submit" value="Submit">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="card bg-light mb-3">
+                    <div class="card-body">
+                      <h2 class="card-title">Delete Emplyee</h2>
+                      <input type="text" class="form-control" placeholder="Employee_ID" aria-label="Employee_ID" aria-describedby="basic-addon1">
+                      <p> </p>
+                      <a href="#" class="btn btn-dark">Submit</a>
+                    </div>
+                  </div>
+                </div>
+                
+            </div>
+        </div>
+      
+        
+
+        <div *ngIf="Product">
+            <div class="row" style="margin-left: 15%;margin-top: 5%;">
+                <div class="col-sm-3">
+                  <div class="card bg-light mb-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Add Product</h5>
+                      <form #productRef = "ngForm"  (ngSubmit) = "addProduct(productRef.value)">
+                        <input type = "text" class="form-control" name = "id" placeholder = "Product ID" ngModel>
+                        <br/>
+
+                        <input type = "text" class="form-control" name = "name" placeholder = "Product Name" ngModel>
+                        <br/>
+                      
+                        <input type = "number" name = "quantity" class="form-control" placeholder = "Quantity of products" ngModel>
+                        <br>
+
+                        <input type = "number" name = "cost" class="form-control" placeholder = "Cost of product" ngModel>
+                        <br/>
+                        <p></p>
+                        <input type="submit" value="Submit">
+                      </form>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="card bg-light mb-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Delete Product</h5>
+                      <form #productRef = "ngForm"  (ngSubmit) = "deleteProduct(productRef.value)">
+                        <input type = "text" class="form-control" name = "id" placeholder = "Product ID" ngModel>
+                        <br/>
+
+                        <input type="submit" value="Submit">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card bg-light mb-3">
+                      <div class="card-body">
+                        <h5 class="card-title">Update Product</h5>
+                        <form #productRef = "ngForm" (ngSubmit) = 'updateProductQuantity(productRef.value)' >
+                            
+                          
+                            <input type = "email" class="form-control" name = "id" placeholder = "Product ID" ngModel>
+                            <br/>
+                          
+                            <input name = "quantity" class="form-control" placeholder = "Quantity of products" ngModel>
+                            <br/>
+                            <p></p>
+                            <input type="submit" value="Submit">
+                          </form>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            
+        
+      </body>
+      </html>

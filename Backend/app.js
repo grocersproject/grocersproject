@@ -1,4 +1,4 @@
-let app = require("express")();
+var app = require("express")();
 let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
 let cors = require("cors");
@@ -18,17 +18,36 @@ const mongooseDbOptions = {
   useNewUrlParser: true,
 };
 
+var allowCrossDomain = function(req, res, next) {
+  // console.log(Object.keys(req));
+  // console.log(req.headers['ip-address']);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With, Accept');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  // intercept OPTIONS method
+  if ('OPTIONS' == req.method) {
+      //res.send(200);
+      res.status(200).end()
+  } else {
+      next();
+  }
+};
+app.use(allowCrossDomain);
+
+
 mongoose.connect(url, mongooseDbOptions);
 
 
 mongoose.connection;
+process.env.SECRET_KEY = 'secret';
 
 
 var AdminRouter = require("./routers/admin.router");
 
 var ProductRotuer = require("./routers/product.router");
 
-var User = require("./routers/user.router.js");
+var User = require("./api/users/users.router.js");
 
 var EmployeeRouter = require("./routers/employee.router");
 

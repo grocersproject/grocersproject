@@ -32,4 +32,12 @@ export class AdminDashboardComponent implements OnInit {
   viewRequest(){
     this.router.navigate(["/employeeViewRequest"])
   }
+
+  addEmp(){
+    this.router.navigate(["/add-emplyee"])
+  }
+
+  deleteEmp(){
+    this.router.navigate(["/delete-emp"])
+  }
 }

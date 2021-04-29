@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { UserComponent } from './user/user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
@@ -14,6 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminDeleteProductComponent } from './admin-delete-product/admin-delete-product.component';
 import { AdminUpdateProductComponent } from './admin-update-product/admin-update-product.component';
 import { AdminViewRequestComponent } from './admin-view-request/admin-view-request.component';
+import { AddEmployeeComponentComponent } from './add-employee-component/add-employee-component.component';
+import { DeleteEmployeeComponentComponent } from './delete-employee-component/delete-employee-component.component';
+import { DashboardUserComponent } from './dashboard-user/dashboard-user.component';
+
 
 @NgModule({
   declarations: [
@@ -26,13 +30,17 @@ import { AdminViewRequestComponent } from './admin-view-request/admin-view-reque
     AdminAddProductComponent,
     AdminDeleteProductComponent,
     AdminUpdateProductComponent,
-    AdminViewRequestComponent
+    AdminViewRequestComponent,
+    AddEmployeeComponentComponent,
+    DeleteEmployeeComponentComponent,
+    DashboardUserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
